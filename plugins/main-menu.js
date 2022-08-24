@@ -269,39 +269,29 @@ const fdoc = {
 
 //━━━━━━━━[ BAGIAN MENU ]━━━━━━━━//
 if (teks == '404') {
-let menuu = `*${ucapan()} ${conn.getName(m.sender)}*
-*U S E R  I N F O*
-• *ɴᴀᴍᴇ:* ${usrs.registered ? usrs.name : conn.getName(m.sender)}
-• *ᴛᴀɢs:* @${m.sender.split`@`[0]}
-• *sᴛᴀᴛᴜs:* ${m.sender.split`@`[0] == nomorown ? 'Developer' : (usrs.premiumTime >= 1 ? 'Premium User' : 'Free User')}
-• *ᴘʀᴇᴍɪᴜᴍ:* ${usrs.premiumTime > 1 ? 'Yes': 'No'}
-
-*S T A T U S  I N F O*
-• *ᴜᴘᴛɪᴍᴇ:* ${mpt}
-• *ᴛɪᴍᴇ:* ${moment.tz('Asia/Jakarta').format('HH')} H  ${moment.tz('Asia/Jakarta').format('mm')} M  ${moment.tz('Asia/Jakarta').format('ss')} S
-• *ᴜsᴇʀs:* ${Object.keys(global.db.data.users).length}
-• *ʟɪᴍɪᴛ:* ${usrs.limit}
-• *ʟᴇᴠᴇʟ:* ${usrs.level}
-• *ʀᴏʟᴇ:* ${usrs.role}${usrs.premiumTime > 1 ? `
-• *ᴇxᴘɪʀᴇᴅ ᴘʀᴇᴍɪᴜᴍ:*
-${clockStringP(usrs.premiumTime - new Date())}` : ''}
-`
+let menuu = `┏━━━ ﹝𝔹𝕆𝕋 𝕀ℕ𝔽𝕆﹞ ━━⚀︎
+┠ 💻𝘖𝘸𝘯𝘦𝘳 ➨ ${global.nameowner}
+┠👤𝘊𝘳𝘦𝘢𝘵𝘰𝘳 ➨ 𝘎𝘦𝘮𝘱𝘺
+┠🤖𝘉𝘰𝘵𝘕𝘢𝘮𝘦 ➨ ${global.namebot}
+┠🔱𝘔𝘰𝘥𝘦 ➨ ${global.opts['self'] ? 'Self' : 'publik'}
+┠ ⏲️𝘙𝘶𝘯𝘵𝘪𝘮𝘦 ➨ ${uptime}
+┗━━━━━━━━━━━━━━━━⚀︎`
 const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
         listMessage: {
             title: `${ucapan()} ${name}`,
             description: menuu,
             buttonText: '⌜ᴘɪʟɪʜ ᴍᴇɴᴜ⌟',
             listType: 1,
-            footerText: "📮 *Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada Owner",
+            footerText: "𝚂𝙸𝙻𝙰𝙷𝙺𝙰𝙽 𝙿𝙸𝙻𝙸𝙷 𝙼𝙴𝙽𝚄 𝙳𝙸 𝙱𝙰𝚆𝙰𝙷",
             mtype: 'listMessage',
             sections: [
               {
                 "rows": [{
-                  "title": ` «👤» 𝐎𝐖𝐍𝐄𝐑 𝐁𝐎𝐓`,
+                  "title": ` «👤» OWNER BOT`,
                   "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙾𝚠𝚗𝚎𝚛 𝙱𝚘𝚝",
                   "rowId": `.owner`
                 },{
-                  "title": "«⚠️» 𝐁𝐎𝐓 𝐈𝐍𝐅𝐎",
+                  "title": "«⚠️» INFO BOT",
                   "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙸𝚗𝚏𝚘",
                   "rowId": `${_p}? info`
                 }],
@@ -495,35 +485,35 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
             hydratedFooterText: wm2, 
             hydratedButtons: [{
             urlButton: {
-               displayText: '𝐘𝐎𝐔𝐓𝐔𝐁𝐄 𝐆𝐄𝐌𝐏𝐘',
+               displayText: 'YOUTUBE KANNA',
                url: web
              }
 
            },
              {
              urlButton: {
-               displayText: '𝐆𝐑𝐔𝐏 𝐏𝐄𝐍𝐓𝐀𝐁𝐎𝐓', 
+               displayText: 'GROUP KANNA', 
                url: gc
              }
 
            },
                {
              quickReplyButton: {
-               displayText: '𝐎𝐖𝐍𝐄𝐑',
+               displayText: 'OWNER',
                id: '.owner',
              }
 
            },
                {
              quickReplyButton: {
-               displayText: '𝐃𝐎𝐍𝐀𝐒𝐈',
+               displayText: 'DONASI',
                id: '.donasi',
              }
 
            },
            {
              quickReplyButton: {
-               displayText: '𝐂𝐑𝐄𝐃𝐈𝐓',
+               displayText: 'CREDIT',
                id: '.tqto',
              }
            }]
